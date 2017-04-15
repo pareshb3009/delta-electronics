@@ -13,7 +13,7 @@ yourPassword = "rashmib30P@"           'replace with a valid password for the gm
 
 'Step 4: set the email address to which email will be sent
 sendEmailTo = Request.Form("email")
-Response.AddHeader("Access-Control-Allow-Origin", "https://pareshb3009.github.io")
+Call Response.AddHeader("Access-Control-Allow-Origin", "https://pareshb3009.github.io")
 
 'Step 5: set the configuration properties of objMail object 
 objMail.Configuration.Fields.Item("http://schemas.microsoft.com/cdo/configuration/sendusing") = 2
