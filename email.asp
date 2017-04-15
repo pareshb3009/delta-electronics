@@ -3,7 +3,7 @@
 <%
 'Step 1: create an object of CDO.Message
 Response.ContentType = "application/json"
-Response.AddHeader("Access-Control-Allow-Origin", "https://pareshb3009.github.io")
+
 dim objMail 
 Set objMail = Server.CreateObject("CDO.Message")
  
