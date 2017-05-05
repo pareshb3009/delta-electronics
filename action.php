@@ -1,4 +1,5 @@
 <?php ob_start(); ?>
+<?php ob_flush(); ?>
 <?php
 header('Content-Type: application/json');
 header("Access-Control-Allow-Origin: *");
@@ -143,4 +144,5 @@ Un-comment to enable email sending
  
 ?>
 
+<?php ob_start(); ?>
 <?php ob_flush(); ?>
