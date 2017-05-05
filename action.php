@@ -1,13 +1,11 @@
-<?php ob_start(); ?>
-<?php ob_flush(); ?>
 <?php
 header('Content-Type: application/json');
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: *");
 $rest_json = file_get_contents("php://input");
-$_POST = json_decode($rest_json, true);
+$_PUT = json_decode($rest_json, true);
 
-if(isset($_POST)) {
+if(isset($_PUT)) {
  
      
  
@@ -39,33 +37,33 @@ if(isset($_POST)) {
  
      
  
-    $firstName = $_POST['firstName'];
+    $firstName = $_PUT['firstName'];
  
-    $lastName = $_POST['lastName'];
+    $lastName = $_PUT['lastName'];
  
-    $email_from = $_POST['email'];
+    $email_from = $_PUT['email'];
  
-    $telephone = $_POST['telephone'];
+    $telephone = $_PUT['telephone'];
  
-    $startDate = substr($_POST['startDate'], 0, strpos($_POST['startDate'], "T"));
+    $startDate = substr($_PUT['startDate'], 0, strpos($_PUT['startDate'], "T"));
     $startDate = date('Y-m-d H:i:s', strtotime($startDate . ' + 1 day'));
     $startDate = str_replace(' 00:00:00', '', $startDate);
 
-    $endDate = substr($_POST['endDate'], 0, strpos($_POST['endDate'], "T"));
+    $endDate = substr($_PUT['endDate'], 0, strpos($_PUT['endDate'], "T"));
     $endDate = date('Y-m-d H:i:s', strtotime($endDate . ' + 1 day'));
     $endDate = str_replace(' 00:00:00', '', $endDate);
 
-    $totalDays = $_POST['totalDays'];
+    $totalDays = $_PUT['totalDays'];
 
-    $groupSize = $_POST['groupSize'];
+    $groupSize = $_PUT['groupSize'];
 
-    $mealType = $_POST['mealType'];
+    $mealType = $_PUT['mealType'];
 
-    $messageDetails = $_POST['message'];
+    $messageDetails = $_PUT['message'];
 
-    $percentage = number_format($_POST['percentage'], 2, '.', ',');
+    $percentage = number_format($_PUT['percentage'], 2, '.', ',');
 
-    $total = number_format($_POST['total'], 2, '.', ',');
+    $total = number_format($_PUT['total'], 2, '.', ',');
  
     $email_message = "Form details below.\n\n";
  
@@ -143,6 +141,3 @@ Un-comment to enable email sending
 
  
 ?>
-
-<?php ob_start(); ?>
-<?php ob_flush(); ?>
