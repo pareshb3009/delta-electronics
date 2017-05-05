@@ -2,8 +2,8 @@
 header('Content-Type: application/json');
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: *");
-// $rest_json = file_get_contents("php://input");
-// $_GET = json_decode($rest_json, true);
+$rest_json = file_get_contents("php://input");
+$_GET = json_decode($rest_json, true);
 
 if(isset($_GET)) {
  
